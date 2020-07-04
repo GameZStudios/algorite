@@ -1,5 +1,5 @@
 {
-  "name": "@gamezstudios/algorite",
+  "name": "@rbxts/algorite",
   "version": "0.0.3",
   "description": "A simple roblox framework for handling remote events",
   "main": "out/init.lua",
