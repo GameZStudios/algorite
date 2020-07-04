@@ -1,6 +1,6 @@
 {
   "name": "@gamezstudios/algorite",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "A simple roblox framework for handling remote events",
   "main": "out/init.lua",
   "scripts": {
