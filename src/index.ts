@@ -1,30 +1,35 @@
 import { RunService, ReplicatedStorage } from "@rbxts/services";
+import Initializer from "./Initializer";
+import RemoteEventMaker from "./RemoteEventMaker";
+
+const RUNTIME_FOLDER = "_algorite";
+
+const app = new Initializer(RunService.IsServer());
 
 export function registerClientEvent(
-  name: string
-): RBXScriptSignal<(player: Player, ...args: unknown[]) => void> {
+  name: string,
+  callback: (player: Player, ...args: unknown[]) => void
+): RBXScriptConnection {
   if (RunService.IsClient()) {
     error(
       "The registerClientEvent event method can only be called from a server!"
     );
   }
 
-  const event = new Instance("RemoteEvent");
-  event.Parent = ReplicatedStorage;
-  event.Name = name;
-
-  return event.OnServerEvent;
+  return new RemoteEventMaker(name, app.frameworkFolder())
+    .event()
+    .OnServerEvent.Connect(callback);
 }
 
-export function registerBindableEvent(name: string): BindableEvent {
-  return new Instance("BindableEvent");
-}
-
-export function fireEvent(name: string, ...props: any[]) {
+export function fireServer(name: string, ...props: any[]) {
   if (RunService.IsServer()) {
-    // check if a bindable event exists
+    error("this method can only be called from the client");
   } else {
-    // check if a remote event exists
+    const event = app.frameworkFolder().FindFirstChild(name);
+    if (event && event.IsA("RemoteEvent")) {
+      event.FireServer(props);
+    } else {
+      error(`event '${name}' was not found`);
+    }
   }
-  // fire the event
 }
