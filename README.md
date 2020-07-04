@@ -10,8 +10,8 @@ Algorite is a GameZStudios framework that should remove the complexity of creati
 
 //todo
 
-[ ] Registering client events
-[ ] Registering server events
-[ ] Sending client event to server
-[ ] Sending server event to server
+[ ] Registering client events  
+[ ] Registering server events  
+[ ] Sending client event to server  
+[ ] Sending server event to server  
 [ ] Sending server event to client (non blocking)
