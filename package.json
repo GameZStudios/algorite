@@ -1,0 +1,26 @@
+{
+  "name": "@gamezstudios/algorite",
+  "version": "0.0.2",
+  "description": "A simple roblox framework for handling remote events",
+  "main": "out/init.lua",
+  "scripts": {
+    "prepublishOnly": "rbxtsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-gamezstudios:GameZStudios/algorite.git"
+  },
+  "author": "GameZStudios",
+  "license": "MIT",
+  "types": "out/index.d.ts",
+  "dependencies": {
+    "@rbxts/services": "^1.0.4"
+  },
+  "devDependencies": {
+    "@rbxts/types": "^1.0.376"
+  },
+  "files": [
+    "README.md",
+    "out"
+  ]
+}
