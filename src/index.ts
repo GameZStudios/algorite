@@ -1,6 +1,7 @@
 import { RunService, ReplicatedStorage } from "@rbxts/services";
 import Initializer from "./Initializer";
 import RemoteEventMaker from "./RemoteEventMaker";
+import AbstractService from "./model/AbstractService";
 
 const RUNTIME_FOLDER = "_algorite";
 
@@ -33,3 +34,5 @@ export function fireServer(name: string, ...props: any[]) {
     }
   }
 }
+
+export { default as AbstractService } from "./model/AbstractService";
