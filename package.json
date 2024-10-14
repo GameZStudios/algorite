@@ -17,7 +17,7 @@
     "@rbxts/services": "^1.0.4"
   },
   "devDependencies": {
-    "@rbxts/types": "1.0.376"
+    "@rbxts/types": "1.0.813"
   },
   "files": [
     "README.md",
